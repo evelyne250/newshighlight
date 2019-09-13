@@ -1,12 +1,14 @@
 import os
+
 class Config:
     '''
     General configuration for the parent class
     '''
     SOURCES_BASE_URL = 'https://newsapi.org/v2/sources?language=en&category={}&apiKey={}'
     
-    NEWS_API_KEY = os.environ.get('NEWS_API_KEY')
+    NEWS_API_KEY = '77ea22a21b0f47acb4283a1e4d5813f3'
     SECRET_KEY = os.environ.get('SECRET_KEY')
+    # NEWS_API_KEY='77ea22a21b0f47acb4283a1e4d5813f3'
 
 class ProdConfig(Config):
     '''

@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html>
+
+        <!-- {% import 'macros.html' as macro%} -->
     <head>
         <meta charset="utf-8">
         {% if title %}
@@ -8,13 +8,51 @@
         <title> Welcome to the news highlight website </title>
         {% endif %}
     </head>
-    </html>
-    <!-- <body>  -->
+  <!-- <body>
+      <div>
+        <h2>General News</h2>
+   
+    {{macro.displayNewsList(general)}}
+</div>
+  </body> -->
+    <body>  
         <!-- Popular movie section  -->
-        <!-- <h3> sources</h3>
+        <h1> Sources</h1>
+        
+       <h2>Business</h2>
          <ul>
-            {% for source in sources %}
-                <li>{{ source.name}}</li>
+            {% for business in new_business %}
+                <li>{{ business.name}}</li>
+            {% endfor %}
+        </ul>
+        <h2>entertainment</h2>
+         <ul>
+            {% for entertainment in new_entertainment %}
+                <li>{{ entertainment.name}}</li>
+            {% endfor %}
+        </ul>
+        <h2>sports</h2>
+         <ul>
+            {% for sports in new_sports %}
+                <li>{{ sports.name}}</li>
+            {% endfor %}
+        </ul>
+        <h2>Technology</h2>
+         <ul>
+            {% for technology in new_tech %}
+                <li>{{ technology.name}}</li>
+            {% endfor %}
+        </ul>
+        <h2>Science</h2>
+         <ul>
+            {% for science in new_science %}
+                <li>{{ science.name}}</li>
+            {% endfor %}
+        </ul>
+        <h2>Health</h2>
+         <ul>
+            {% for health in new_health %}
+                <li>{{ health.name}}</li>
             {% endfor %}
         </ul>
  </body>

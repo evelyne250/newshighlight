@@ -11,7 +11,7 @@ def index():
     View root page function that returns the index page and its data
     '''
     
-    new_general = get_sources('general')
+   
     new_business = get_sources('business')
     new_entertainment = get_sources('entertainment')
     new_sports = get_sources('sports')
@@ -20,4 +20,4 @@ def index():
     new_health = get_sources('health')
 
     title = 'Home | Best News Highlight'
-    return render_template('index.html',title = title)
+    return render_template('index.html',title = title, new_business = new_business, new_entertainment = new_entertainment, new_sports = new_sports, new_tech = new_tech, new_science = new_science, new_health = new_health)

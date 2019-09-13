@@ -1,5 +1,4 @@
-from app import app
-from app import app
+
 import urllib.request,json
 from .models import Sources
 
@@ -15,7 +14,7 @@ def configure_request(app):
     global api_key, sources_url
     api_key = app.config['NEWS_API_KEY']
     sources_url = app.config['SOURCES_BASE_URL']
-
+    print('hhhhhh')
 def get_sources(category):
     '''
     Function that gets the json response to our url request
@@ -31,6 +30,7 @@ def get_sources(category):
         if get_sources_response['sources']:
             sources_results_list = get_sources_response['sources']
             sources_results = process_results(sources_results_list)
+    
     return sources_results
 
 def process_results(sources_list):
