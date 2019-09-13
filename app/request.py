@@ -1,15 +1,20 @@
 from app import app
 from app import app
 import urllib.request,json
-from .models import news
+from .models import Sources
 
-News = news.News
+#News = news.News
+
 # Getting api key
-api_key = app.config['NEWS_API_KEY']
+api_key = None
+# Getting the movie base url
+sources_url = None
 
-# Getting the news base url
-sources_url = app.config["BASE_URL_SOURCES"]
-#articles_url = app.config["BASE_URL_ARTICLES"]
+
+def configure_request(app):
+    global api_key, sources_url
+    api_key = app.config['NEWS_API_KEY']
+    sources_url = app.config['SOURCES_BASE_URL']
 
 def get_sources(category):
     '''
@@ -43,8 +48,8 @@ def process_results(sources_list):
         language = source_item.get('language')
         country = source_item.get('country')
 
-        # if url:
-        #     source_object = Sources(id,name,description,url,category,language,country)
-        #     sources_results.append(source_object)
+        if url:
+            source_object = Sources(id,name,description,url,category,language,country)
+            sources_results.append(source_object)
             
     return sources_results
