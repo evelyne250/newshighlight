@@ -14,7 +14,7 @@ def configure_request(app):
     global api_key, sources_url
     api_key = app.config['NEWS_API_KEY']
     sources_url = app.config['SOURCES_BASE_URL']
-    print('hhhhhh')
+ 
 def get_sources(category):
     '''
     Function that gets the json response to our url request
