@@ -24,26 +24,27 @@ def get_sources(category):
         sources_results = None
 
         if get_sources_response['sources']:
-            sources_results = process_results(get_sources_response['sources'])
-    
+            sources_results_list = get_sources_response['sources']
+            sources_results = process_results(sources_results_list)
     return sources_results
 
 def process_results(sources_list):
     '''
-    Function that processes the json results
+    Function that processes the sources results
     '''
     sources_results = []
 
-    for source in sources_list:
-        id = source.get('id')
-        name = source.get('name')
-        description = source.get('description')
-        url = source.get('url')
-        category = source.get('category')
-        country = source.get('country')
+    for source_item in sources_list:
+        id = source_item.get('id')
+        name = source_item.get('name')
+        description = source_item.get('description')
+        url = source_item.get('url')
+        category = source_item.get('category')
+        language = source_item.get('language')
+        country = source_item.get('country')
 
-        if url:
-            source_object = Sources(id,name,description,url,category,country)
-            sources_results.append(source_object)
-    
+        # if url:
+        #     source_object = Sources(id,name,description,url,category,language,country)
+        #     sources_results.append(source_object)
+            
     return sources_results

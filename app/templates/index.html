@@ -9,6 +9,12 @@
         {% endif %}
     </head>
     <body>
-
-    </body>
+        <!-- Popular movie section  -->
+        <h3> sources</h3>
+         <ul>
+            {% for source in sources %}
+                <li>{{ source.name}}</li>
+            {% endfor %}
+        </ul>
+ </body>
 </html>
