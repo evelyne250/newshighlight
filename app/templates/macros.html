@@ -1,17 +1,4 @@
-<!-- {% macro displayNewsList(sources_list) %}
-
-    {% for sources in sources_list%}
-        <p>{{ sources.name }}</p>
-    {% endfor %}
-
-{% endmacro %} -->
-
-
-
-
-
-
-<!-- {% macro displayNewsList(news_list) %}
+{% macro displayNewsList(news_list) %}
 <div class="row">
    {% for news in news_list%}
    <div class="col-md-3  movie-card">
@@ -19,12 +6,12 @@
               {{ news.description }}
        </p>
            <li class="text-center">
-                   <a href="/news/{{news.id}}">
+                   <!-- <a href="/news/{{news.id}}"> -->
                    <a href="{{url_for('main.articles', id=news.id)}}">
                    {{ news.name|truncate(10)}}</a>
                </li>
-        <li>{{ news.name}}</li> -->
-       <!-- </div>
+       <!-- <li>{{ news.name}}</li> -->
+       </div>
    {% endfor %}
 </div>
-{% endmacro %} --> 
+{% endmacro %}

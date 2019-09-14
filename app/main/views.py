@@ -1,6 +1,6 @@
-from flask import render_template
+from flask import render_template,request,redirect,url_for
 from . import main
-from ..request import get_sources, get_articles
+from ..request import get_sources
 from ..models import Sources
 
 # Views
@@ -20,17 +20,21 @@ def index():
     new_health = get_sources('health')
 
     title = 'Home | Best News Highlight'
-    return render_template('index.html',title = title,new_general = new_general, new_business = new_business, new_entertainment = new_entertainment, new_sports = new_sports, new_tech = new_tech, new_science = new_science, new_health = new_health)
+    search_news = request.args.get('news_query')
 
+    if search_news:
+        return redirect(url_for('search',news_name=search_news))
+    else:
+        return render_template('index.html',title = title,new_general = new_general, new_business = new_business, new_entertainment = new_entertainment, new_sports = new_sports, new_tech = new_tech, new_science = new_science, new_health = new_health)
 
-@main.route('/articles/<source_id>&<int:per_page>')
-def articles(source_id,per_page):
-    '''
-    Function that returns articles based on their sources
-    '''
-    print(source_id)
-    # per_page = 40
-    news_source = get_articles('source_id')
-    title = f'{source_id} | All Articles'
-    return render_template('articles.html', title = title, name = source_id,news_source = news_source)
-
+@main.route('/news/<id>')
+def articles(id):
+   '''
+   view articles page
+   '''
+   print('test')
+   print(id)
+   articles = get_articles(id)
+   # print(articles)
+   title = f'NH | {id}'
+   return render_template('articles.html',title= title,articles = articles)
