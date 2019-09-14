@@ -1,16 +1,24 @@
 {% extends 'base.html'%}
- 
+ <!-- Styles block -->
+
+<!--  -->
     <!-- Content block -->
 {% block content %}
 
 
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 heading">
+            <h1>News Highlights</h1>
+        </div>
+    </div>
+    <hr>
         <h2>General News</h2>
-        <ul>
+        <ul>  <div class="row">
                 {% for general in new_general %}
-                 <div class="row"></div>
-                    <div class="col-md-3">
-                       <div class="card" style="border-bottom: 1px solid rgb(48, 51, 253);"></div>
-                            <h2> {{ general.name}}</h2>
+                <div class="col-md-2">
+                        <div>
+                            <div><h2> {{ general.name}}</h2>
                                <p>{{general.description | truncate(80)}}</p>
                                <p>{{general.language}}</p>
                                <p>{{general.country}}</p>   
@@ -20,13 +28,12 @@
                  </div>
                 </div>
                 {% endfor %}
-            </ul>
+            </ul></div>
             <hr>
        <h2>Business</h2>
-         <ul>
+          <div class="row">
             {% for business in new_business %}
-             <div class="row"></div>
-                <div class="col-md-3">
+            <div class="col-md-2">
                    <div class="card" style="border-bottom: 1px solid rgb(48, 51, 253);"></div>
                         <h2> {{ business.name}}</h2>
                            <p>{{business.description | truncate(80)}}</p>
@@ -34,91 +41,88 @@
                            <p>{{business.country}}</p>   
                            <p><a href="{{business.url}}">Read Articles</a></p>             
                    </div>
-                </div>
-             </div>
+          </div>
+         
             {% endfor %}
-        </ul>
+       
         <hr>
         <h2>entertainment</h2>
          <ul>
+             <div class="row">
             {% for entertainment in new_entertainment %}
-            <div class="row"></div>
-            <div class="col-md-3">
-               <div class="card" style="border-bottom: 1px solid rgb(48, 51, 253);"></div>
+            <div class="col-md-2">
+            <!-- <div class="col-md-3"> -->
+               <!-- <div class="card" style="border-bottom: 1px solid rgb(48, 51, 253);"></div> -->
                     <h2> {{ entertainment.name}}</h2>
                        <p>{{entertainment.description | truncate(80)}}</p>
                        <p>{{entertainment.language}}</p>
                        <p>{{entertainment.country}}</p>   
                        <p><a href="{{entertainment.url}}">Read Articles</a></p>             
                </div>
-            </div>
-         </div>
+           </div>
             {% endfor %}
         </ul>
         <hr>
         <h2>sports</h2>
-         <ul>
+         <ul> <div class="row">
             {% for sports in new_sports %}
-            <div class="row"></div>
-            <div class="col-md-3">
-               <div class="card" style="border-bottom: 1px solid rgb(48, 51, 253);"></div>
+            <div class="col-md-2">
+            <!-- <div class="col-md-3"> -->
+               <!-- <div class="card" style="border-bottom: 1px solid rgb(48, 51, 253);"></div> -->
                     <h2> {{ sports.name}}</h2>
                        <p>{{sports.description | truncate(80)}}</p>
                        <p>{{sports.language}}</p>
                        <p>{{sports.country}}</p>   
                        <p><a href="{{sports.url}}">Read Articles</a></p>             
-               </div>
-            </div>
+              
+         </div>
          </div>
             {% endfor %}
         </ul>
         <hr>
         <h2>Technology</h2>
-         <ul>
+         <ul> <div class="row">
             {% for technology in new_tech %}
-            <div class="row"></div>
-            <div class="col-md-3">
-               <div class="card" style="border-bottom: 1px solid rgb(48, 51, 253);"></div>
+            <div class="col-md-2">
+            <!-- <div class="col-md-3"> -->
+               <!-- <div class="card" style="border-bottom: 1px solid rgb(48, 51, 253);"></div> -->
                     <h2> {{ technology.name}}</h2>
                        <p>{{technology.description | truncate(80)}}</p>
                        <p>{{technology.language}}</p>
                        <p>{{technology.country}}</p>   
                        <p><a href="{{technology.url}}">Read Articles</a></p>             
-               </div>
             </div>
          </div>
             {% endfor %}
         </ul>
         <hr>
         <h2>Science</h2>
-         <ul>
+         <ul><div class="row">
             {% for science in new_science %}
-            <div class="row"></div>
-            <div class="col-md-3">
-               <div class="card" style="border-bottom: 1px solid rgb(48, 51, 253);"></div>
+            <div class="col-md-2">
+            <!-- <div class="col-md-3"> -->
+               <!-- <div class="card" style="border-bottom: 1px solid rgb(48, 51, 253);"></div> -->
                     <h2> {{ science.name}}</h2>
                        <p>{{science.description | truncate(80)}}</p>
                        <p>{{science.language}}</p>
                        <p>{{science.country}}</p>   
                        <p><a href="{{science.url}}">Read Articles</a></p>             
-               </div>
-            </div>
+              </div>
          </div>
             {% endfor %}
         </ul>
         <hr>
         <h2>Health</h2>
-         <ul>
+         <ul>    <div class="row">
             {% for health in new_health %}
-            <div class="row"></div>
-            <div class="col-md-3">
-               <div class="card" style="border-bottom: 1px solid rgb(48, 51, 253);"></div>
+            <div class="col-md-2">
+            <!-- <div class="col-md-3"> -->
+               <!-- <div class="card" style="border-bottom: 1px solid rgb(48, 51, 253);"></div> -->
                     <h2> {{ health.name}}</h2>
                        <p>{{health.description | truncate(80)}}</p>
                        <p>{{health.language}}</p>
                        <p>{{health.country}}</p>   
                        <p><a href="{{health.url}}">Read Articles</a></p>             
-               </div>
             </div>
          </div>
             {% endfor %}
