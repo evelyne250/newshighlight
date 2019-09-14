@@ -1,59 +1,131 @@
-
-        <!-- {% import 'macros.html' as macro%} -->
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Welcome to the news highlight website </title>
-        {% endif %}
-    </head>
-  <!-- <body>
-      <div>
-        <h2>General News</h2>
-   
-    {{macro.displayNewsList(general)}}
-</div>
-  </body> -->
-    <body>  
-        <!-- Popular movie section  -->
+{% extends 'base.html'%}
+ 
+    <!-- Content block -->
+{% block content %}
+   <div class="row">
+       <div class="col-md-12">
         <h1> sources</h1>
-        
+        <h2>General News</h2>
+        <ul>
+                {% for general in new_general %}
+                 <div class="row"></div>
+                    <div class="col-md-3">
+                       <div class="card" style="border-bottom: 1px solid rgb(48, 51, 253);"></div>
+                            <h2> {{ general.name}}</h2>
+                               <p>{{general.description | truncate(80)}}</p>
+                               <p>{{general.language}}</p>
+                               <p>{{general.country}}</p>   
+                               <p><a href="{{general.url}}">Read Articles</a></p>             
+                       </div>
+                    </div>
+                 </div>
+                </div>
+                {% endfor %}
+            </ul>
+            <hr>
        <h2>Business</h2>
          <ul>
             {% for business in new_business %}
-                <li>{{ business.name}}</li>
+             <div class="row"></div>
+                <div class="col-md-3">
+                   <div class="card" style="border-bottom: 1px solid rgb(48, 51, 253);"></div>
+                        <h2> {{ business.name}}</h2>
+                           <p>{{business.description | truncate(80)}}</p>
+                           <p>{{business.language}}</p>
+                           <p>{{business.country}}</p>   
+                           <p><a href="{{business.url}}">Read Articles</a></p>             
+                   </div>
+                </div>
+             </div>
             {% endfor %}
         </ul>
+        <hr>
         <h2>entertainment</h2>
          <ul>
             {% for entertainment in new_entertainment %}
-                <li>{{ entertainment.name}}</li>
+            <div class="row"></div>
+            <div class="col-md-3">
+               <div class="card" style="border-bottom: 1px solid rgb(48, 51, 253);"></div>
+                    <h2> {{ entertainment.name}}</h2>
+                       <p>{{entertainment.description | truncate(80)}}</p>
+                       <p>{{entertainment.language}}</p>
+                       <p>{{entertainment.country}}</p>   
+                       <p><a href="{{entertainment.url}}">Read Articles</a></p>             
+               </div>
+            </div>
+         </div>
             {% endfor %}
         </ul>
+        <hr>
         <h2>sports</h2>
          <ul>
             {% for sports in new_sports %}
-                <li>{{ sports.name}}</li>
+            <div class="row"></div>
+            <div class="col-md-3">
+               <div class="card" style="border-bottom: 1px solid rgb(48, 51, 253);"></div>
+                    <h2> {{ sports.name}}</h2>
+                       <p>{{sports.description | truncate(80)}}</p>
+                       <p>{{sports.language}}</p>
+                       <p>{{sports.country}}</p>   
+                       <p><a href="{{sports.url}}">Read Articles</a></p>             
+               </div>
+            </div>
+         </div>
             {% endfor %}
         </ul>
+        <hr>
         <h2>Technology</h2>
          <ul>
             {% for technology in new_tech %}
-                <li>{{ technology.name}}</li>
+            <div class="row"></div>
+            <div class="col-md-3">
+               <div class="card" style="border-bottom: 1px solid rgb(48, 51, 253);"></div>
+                    <h2> {{ technology.name}}</h2>
+                       <p>{{technology.description | truncate(80)}}</p>
+                       <p>{{technology.language}}</p>
+                       <p>{{technology.country}}</p>   
+                       <p><a href="{{technology.url}}">Read Articles</a></p>             
+               </div>
+            </div>
+         </div>
             {% endfor %}
         </ul>
+        <hr>
         <h2>Science</h2>
          <ul>
             {% for science in new_science %}
-                <li>{{ science.name}}</li>
+            <div class="row"></div>
+            <div class="col-md-3">
+               <div class="card" style="border-bottom: 1px solid rgb(48, 51, 253);"></div>
+                    <h2> {{ science.name}}</h2>
+                       <p>{{science.description | truncate(80)}}</p>
+                       <p>{{science.language}}</p>
+                       <p>{{science.country}}</p>   
+                       <p><a href="{{science.url}}">Read Articles</a></p>             
+               </div>
+            </div>
+         </div>
             {% endfor %}
         </ul>
+        <hr>
         <h2>Health</h2>
          <ul>
             {% for health in new_health %}
-                <li>{{ health.name}}</li>
+            <div class="row"></div>
+            <div class="col-md-3">
+               <div class="card" style="border-bottom: 1px solid rgb(48, 51, 253);"></div>
+                    <h2> {{ health.name}}</h2>
+                       <p>{{health.description | truncate(80)}}</p>
+                       <p>{{health.language}}</p>
+                       <p>{{health.country}}</p>   
+                       <p><a href="{{health.url}}">Read Articles</a></p>             
+               </div>
+            </div>
+         </div>
             {% endfor %}
         </ul>
- </body>
+    </div>
+ {% endblock%}
 
+
+ 
