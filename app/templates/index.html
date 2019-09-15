@@ -13,15 +13,14 @@
             <h2>General News</h2>
                 {% for general in new_general %}
                 <div class="col-md-2">
-                        <div>
-                            <div><h2> {{ general.name}}</h2>
+                    
+                        <h2> {{ general.name}}</h2>
                                <p>{{general.description | truncate(80)}}</p>
                                <p>{{general.language}}</p>
                                <p>{{general.country}}</p>   
                                <p><a href="{{general.url}}">Read Articles</a></p>             
                        </div>
-                    </div>
-                 </div>
+                   
                 </div>
                 {% endfor %}
             </ul></div>
