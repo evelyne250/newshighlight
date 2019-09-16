@@ -22,6 +22,9 @@ No known errors
     - CSS
     - Bootstrap
 
+## Link to Heroku
+https://newshigh22.herokuapp.com/
+
 ## License
 
 MIT License
