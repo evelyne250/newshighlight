@@ -19,11 +19,12 @@ class Articles:
     '''
     Sources class that defines source objects
     '''
-    def __init__(self,name,author,title,description,url,urlToImage,publishedAt,content):
+    def __init__(self,id,author,title,description,url,urlToImage,publishedAt,content):
         '''
         Function that initiates the sources class
         '''
-        self.name = name
+        self.id = id
+       
         self.author = author
         self.title = title
         self.description = description

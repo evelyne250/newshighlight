@@ -1,57 +1,28 @@
-<!-- {% extends 'base.html'%}
-{% block content%}
-<div class="container"> -->
-    <!-- Popular movie section  -->
-       <!-- <h3> Top Headlines</h3>
-       {% for article_row in articles | batch(4)%}
-            <div class="row">
-           
-                {% for article in article_row %}
-                    <div class="col-md-3">
-                        <div class="thumbnail">
-                        <a href="{{article.url}}" target="_blank">
-                              <img src="{{article.image}}" alt="{{article.title}}" class="img-responsive" styles="height:30px">
-                              </a>
-                              <div class="caption">
-                                <h4><a href="{{article.url}}" target="_blank">{{article.title |truncate(35)}}</a></h4>
-                                <p>{{article.description | truncate(80)}}</p>
-                                <a href="{{article.url}}" target="_blank"> Read More</a>
-                                
-                              </div>
-                              <div class="footer">
-                              Published at: {{article.date}}
-                              
-                                
-                            </div>
-                          </div>
-                     </div>
-                     
-                {% endfor %}
-            
+{% extends 'base.html' %} 
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 heading">
+            <h1> {{name}} </h1>
+        </div>
+    </div>
+    <div class="row">
+        {% for article in articles %}
+        <div class="col-md-3 articles-details">
+            <a href={{article.url}} target="_blank">
+                <img src={{article.urlToImage}}>
+            </a>
+            <div class="words">
+                <h4 class="text-bold"> {{article.title}} </h4>
+                <p class="small">- {{article.author}} </p>
+                <p class="small">Posted on {{article.publishedAt}}</p>
+                <hr>
+                <p> {{article.description}}...
+                    <a href={{article.url}} target="_blank">Read More</a>
+                </p>
             </div>
-       {% endfor %}
-    
+        </div>
+        {% endfor %}
+    </div>
 </div>
-{%endblock%} -->
-
-{% extends 'base.html'%}
-{%block content%}
-{% block styles%}
-    {{ super() }}
-    {% endblock %}
-<ul>
-{%for article in articles %}
-<div class= "row">
-    <h1><a href="{{article.url}}">{{article.title}}</a></h1>
-    <p><img src="{{article.urlToImage}}" class="img-fluid"/></p>
-
-    <h3>source: {{article.source.name}} Titlee:{{article.title}} Author: {{article.author }} </h3>
-    <p>description:{{article.description}}</p>
-
-</div>
-
-
-
-{%endfor%}
-</ul>
- {% endblock %}
+{% endblock%}

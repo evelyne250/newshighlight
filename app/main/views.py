@@ -1,6 +1,6 @@
 from flask import render_template,request,redirect,url_for
 from . import main
-from ..request import get_sources
+from ..request import get_sources, get_articles
 from ..models import Sources
 
 # Views
@@ -27,7 +27,7 @@ def index():
     else:
         return render_template('index.html',title = title,new_general = new_general, new_business = new_business, new_entertainment = new_entertainment, new_sports = new_sports, new_tech = new_tech, new_science = new_science, new_health = new_health)
 
-@main.route('/news/<id>')
+@main.route('/articles/<id>')
 def articles(id):
    '''
    view articles page
